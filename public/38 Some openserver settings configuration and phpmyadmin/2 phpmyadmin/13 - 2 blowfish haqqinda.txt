@@ -1,0 +1,42 @@
+
+
+
+$cfg['blowfish_secret'] dəyişəni phpMyAdmin kimi vasitələrdə sessiya məlumatlarının və çərəzlərin təhlükəsiz şifrələnməsi üçün istifadə olunur. 
+Bu dəyişən Blowfish şifrələmə alqoritminin açarını təyin edir.
+
+
+
+
+Təyinatı:
+- Sessiya Təhlükəsizliyi: phpMyAdmin sessiya məlumatlarını (məsələn, istifadəçi sessiya ID-si və digər kritik məlumatları) təhlükəsiz şəkildə saxlamaq 
+üçün Blowfish şifrələməsini istifadə edir.
+- Çərəzlərin Şifrələnməsi: phpMyAdmin çərəzlər vasitəsilə saxlanılan məlumatları (məsələn, giriş sessiyaları və ayarlar) Blowfish ilə şifrələyir ki, 
+bu məlumatlar üçüncü tərəflər tərəfindən oğurlanıb manipulyasiya edilməsin.
+
+
+
+
+Necə İşləyir:
+- Şifrələmə və şifrənin açılması üçün $cfg['blowfish_secret'] dəyişənindəki açar istifadə olunur.
+- Əgər bu açar düzgün təyin edilməyibsə, phpMyAdmin düzgün işləməyəcək və istifadəçilər müəyyən sessiya problemləri ilə qarşılaşa bilərlər.
+
+
+
+
+Vacib Qeydlər:
+- Unikal Olmalıdır: Bu açar hər phpMyAdmin qurulumu üçün unikal olmalıdır. Eyni açarı başqa bir sistemdə istifadə etmək təhlükəsizlik riskləri yarada bilər.
+- Uzunluğu: Təhlükəsizlik məqsədilə Blowfish açarının ən azı 32 simvol uzunluğunda olması tövsiyə edilir.
+- Yalnız Serverdə Saxlanılmalıdır: Bu açar ictimaiyyətə açıq olmamalıdır. Konfiqurasiya faylı (məsələn, config.inc.php) yaxşı qorunan bir serverdə saxlanılmalıdır.
+
+
+
+
+
+Blowfish Secret-i Necə Təhlükəsiz Yarada Bilərəm?
+- Blowfish üçün təsadüfi bir açar yaratmaq üçün PHP kodundan və ya onlayn vasitələrdən istifadə edə bilərsiniz. 
+  Məsələn, PHP-də: echo bin2hex(random_bytes(16)); // 32 simvol uzunluğunda təsadüfi açar
+  Bu, məsələn, bu kimi bir açar verəcək: d4f1e2a6b3c7e0f4a9d8b7c3f2e1a0b6
+
+
+
+  
