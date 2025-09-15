@@ -18,13 +18,12 @@ $ch = curl_init();
 //      CURLOPT_URL: Sorğunun göndəriləcəyi URL-i təyin edir.
 //      CURLOPT_RETURNTRANSFER: Cavabın ekrana deyil, bir dəyişənə (bu halda $response) qaytarılmasını təmin edir.
 //      CURLOPT_SSL_VERIFYPEER: SSL sertifikatı yoxlamasını deaktiv edir (bunu yalnız test üçün etmək lazımdır, real mühitdə SSL yoxlaması edilməlidir).
-curl_setopt($ch, CURLOPT_URL, $url); // URL təyin et
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Cavabı qaytarmasını istə
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // SSL sertifikatını yoxlama (test üçün)
+curl_setopt($ch, CURLOPT_URL, $url);                // URL təyin et
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);     // Cavabı qaytarmasını istə
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);    // SSL sertifikatını yoxlamasın (test üçün)
 
 // Cavabı al
 $response = curl_exec($ch);
-
 
 
 // Hər hansı bir xəta varsa yoxla
