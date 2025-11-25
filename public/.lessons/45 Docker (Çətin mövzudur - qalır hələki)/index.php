@@ -81,7 +81,6 @@
     aşağıdakı əmri yenidən yazırıq (NOT: yolu tam vermək lazımdır): 
             - docker run -d -p 80:80 -v C:/Users/Admin/Desktop/dockerProj/vhost.conf:/etc/nginx/conf.d/default.conf -v C:/Users/Admin/Desktop/dockerProj/www:/var/www/public_html nginx
 
-
     
 -->
 
