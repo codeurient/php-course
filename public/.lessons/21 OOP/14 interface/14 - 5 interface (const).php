@@ -1,7 +1,7 @@
 <!-- 
  
 
-    Bir class birdən çox interface implement edə bilər və hər bir interface-in sabitlərinə istinad edə bilər:
+    Bir class eyni adda birdən çox interface implement edə bilmez.
 
 
 -->
@@ -19,8 +19,8 @@
 
     class MyClass implements InterfaceA, InterfaceB {
         public function sayHello() {
-            echo InterfaceA::GREETING; // Çap edəcək: Salam!
-            echo InterfaceB::GREETING; // Çap edəcək: Hello!
+            echo InterfaceA::GREETING; // Xeta
+            echo InterfaceB::GREETING; // Xeta
         }
     }
 
